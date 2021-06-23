@@ -9,17 +9,9 @@
             </div>
             <hr class="footer">
             <div class="social-footer">
-                @if(env('FACEBOOK_PAGE'))
-                <div class="social-items"><p><a href="{{env('FACEBOOK_PAGE')}}" target="_blank" ><i class="fa fa-facebook" aria-hidden="true"></i></a></p></div>
-                @endif
-                
-                @if(env('TWITTER_PAGE'))
-                <div class="social-items"><p><a href="#" target="_blank" ><i class="fa fa-twitter" aria-hidden="true"></i></a></p></div>
-                @endif
-
-                @if(env('INSTA_PAGE'))
-                <div class="social-items"><p><a href="{{env('INSTA_PAGE')}}" target="_blank" ><i class="fa fa-instagram" aria-hidden="true"></i></a></p></div>
-                @endif
+                    <div class="social-items"><p><a href="https://www.facebook.com/DietClubeg" target="_blank" ><i class="fa fa-facebook" aria-hidden="true"></i></a></p></div>
+                    {{-- <div class="social-items"><p><a href="#" target="_blank" ><i class="fa fa-twitter" aria-hidden="true"></i></a></p></div> --}}
+                    <div class="social-items"><p><a href="https://www.instagram.com/diteclub" target="_blank" ><i class="fa fa-instagram" aria-hidden="true"></i></a></p></div>
             </div>
             </div>
             <div class="col-lg-3 footer-center-col">

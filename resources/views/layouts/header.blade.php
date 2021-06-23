@@ -2,22 +2,14 @@
     <div class="top-header">
         <div class="container">
             <div class="leftside">
-                <div class="email-top"><p>info@actiongym.com</p></div>
-                <div class="phone-top"><p>212-869-3323</p></div>
-                <div class="address-top"><p>8273 NW 59th ST Florida</p></div>
+                <div class="email-top"><p>dietclubeg@gmail.com</p></div>
+                <div class="phone-top"><p>+201003615945</p></div>
+                {{-- <div class="address-top"><p>8273 NW 59th ST Florida</p></div> --}}
             </div>
             <div class="rightside">
-                @if(env('FACEBOOK_PAGE'))
-                <div class="social-items"><p><a href="{{env('FACEBOOK_PAGE')}}" target="_blank" ><i class="fa fa-facebook" aria-hidden="true"></i></a></p></div>
-                @endif
-                
-                @if(env('TWITTER_PAGE'))
-                <div class="social-items"><p><a href="#" target="_blank" ><i class="fa fa-twitter" aria-hidden="true"></i></a></p></div>
-                @endif
-
-                @if(env('INSTA_PAGE'))
-                <div class="social-items"><p><a href="{{env('INSTA_PAGE')}}" target="_blank" ><i class="fa fa-instagram" aria-hidden="true"></i></a></p></div>
-                @endif
+                <div class="social-items"><p><a href="https://www.facebook.com/DietClubeg" target="_blank" ><i class="fa fa-facebook" aria-hidden="true"></i></a></p></div>
+                {{-- <div class="social-items"><p><a href="#" target="_blank" ><i class="fa fa-twitter" aria-hidden="true"></i></a></p></div> --}}
+                <div class="social-items"><p><a href="https://www.instagram.com/diteclub" target="_blank" ><i class="fa fa-instagram" aria-hidden="true"></i></a></p></div>
             </div>
         </div>
     </div>
@@ -44,7 +36,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="packages.html">PACKAGES</a>
                     </li>
-                    <li class="nav-item active dropdown">
+                    {{-- <li class="nav-item active dropdown">
                         <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">PAGES <span class="caret-drop"></span></a>
                         <ul class="dropdown-menu">
                             <li class="divider-top"></li>
@@ -62,7 +54,7 @@
                             <li class="divider"></li>
                             <li><a class="dropdown-item" href="404-error-page.html">404 Error Page</a></li>
                         </ul>
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
                         <a class="nav-link" href="contact-us.html">CONTACT</a>
                     </li>

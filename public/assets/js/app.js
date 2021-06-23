@@ -2,7 +2,7 @@
 
 function startNow() {
     if(detectMob())
-        location.href = 'whatsapp://send?phone=2001207897589'
+        location.href = 'whatsapp://send?phone=2001003615945'
     else alert('DESKTOP')
 }
 
