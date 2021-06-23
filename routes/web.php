@@ -13,5 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'mainController@index');
+Route::get('/', 'mainController@index')->name('main.index');
 Route::post('/change/lang','mainController@change_lang')->name('change.lang');

@@ -15,7 +15,7 @@
             <div class="col-lg-4 image-box">
             <figure><img src="http://placehold.it/900x600" alt=""/></figure>
             <div class="caption">
-                <div class="caption-icon"><img src="{{asset('assets/img/master/gym3.png')}}" alt=""></div>
+                <div class="caption-icon"><img src="{{asset('public/assets/img/master/gym3.png')}}" alt=""></div>
                 <div class="caption-label">
                 <h4>Stay Fit</h4>
                 </div>
@@ -24,7 +24,7 @@
             <div class="col-lg-4 image-box">
             <figure><img src="http://placehold.it/900x600" alt=""/></figure>
             <div class="caption">
-                <div class="caption-icon"><img src="{{asset('assets/img/master/weight.png')}}" alt=""></div>
+                <div class="caption-icon"><img src="{{asset('public/assets/img/master/weight.png')}}" alt=""></div>
                 <div class="caption-label">
                 <h4>Lose Weight</h4>
                 </div>
@@ -33,7 +33,7 @@
             <div class="col-lg-4 image-box">
             <figure><img src="http://placehold.it/900x600" alt=""/></figure>
             <div class="caption">
-                <div class="caption-icon"><img src="{{asset('assets/img/master/gym.png')}}" alt=""></div>
+                <div class="caption-icon"><img src="{{asset('public/assets/img/master/gym.png')}}" alt=""></div>
                 <div class="caption-label">
                 <h4>Build Muscle</h4>
                 </div>
@@ -49,7 +49,7 @@
                 <div class="aside-left">
                     <div class="icon-lists">
                         <div class="icon-circle">
-                            <figure class="icon-center"><img src="{{asset('assets/img/master/dumbbell.png')}}" alt=""></figure>
+                            <figure class="icon-center"><img src="{{asset('public/assets/img/master/dumbbell.png')}}" alt=""></figure>
                         </div>
                         <div class="icon-text">
                             <h3>Lose Weight</h3> 
@@ -58,7 +58,7 @@
                     </div>
                     <div class="icon-lists">
                         <div class="icon-circle">
-                            <figure class="icon-center"><img src="{{asset('assets/img/master/006-gym.png')}}" alt=""></figure>
+                            <figure class="icon-center"><img src="{{asset('public/assets/img/master/006-gym.png')}}" alt=""></figure>
                         </div>
                         <div class="icon-text">
                             <h3>Build Muscle</h3> 
@@ -67,7 +67,7 @@
                     </div>
                     <div class="icon-lists">
                         <div class="icon-circle">
-                            <figure class="icon-center"><img src="{{asset('assets/img/master/exercise.png')}}" alt=""></figure>
+                            <figure class="icon-center"><img src="{{asset('public/assets/img/master/exercise.png')}}" alt=""></figure>
                         </div>
                         <div class="icon-text">
                             <h3>Stay Fit</h3> 
@@ -83,7 +83,7 @@
                 <div class="aside-right">
                     <div class="icon-lists">
                         <div class="icon-circle">
-                            <figure class="icon-center"><img src="{{asset('assets/img/master/gym-1.png')}}" alt=""></figure>
+                            <figure class="icon-center"><img src="{{asset('public/assets/img/master/gym-1.png')}}" alt=""></figure>
                         </div>
                         <div class="icon-text">
                             <h3>Protein Plan</h3> 
@@ -92,7 +92,7 @@
                     </div>
                     <div class="icon-lists">
                         <div class="icon-circle">
-                            <figure class="icon-center"><img src="{{asset('assets/img/master/weightlifting.png')}}" alt=""></figure>
+                            <figure class="icon-center"><img src="{{asset('public/assets/img/master/weightlifting.png')}}" alt=""></figure>
                         </div>
                         <div class="icon-text">
                             <h3>Body Improve</h3> 
@@ -101,7 +101,7 @@
                     </div>
                     <div class="icon-lists last-item-list">
                         <div class="icon-circle">
-                            <figure class="icon-center"><img src="{{asset('assets/img/master/gym-2.png')}}" alt=""></figure>
+                            <figure class="icon-center"><img src="{{asset('public/assets/img/master/gym-2.png')}}" alt=""></figure>
                         </div>
                         <div class="icon-text">
                             <h3>Personal Trainer</h3> 
@@ -195,17 +195,17 @@
                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
                 <div class="counter-facts">
                     <div class="inner-facts">
-                        <figure class="counter-icon"><img src="{{asset('assets/img/master/trainer.png')}}" alt=""></figure>
+                        <figure class="counter-icon"><img src="{{asset('public/assets/img/master/trainer.png')}}" alt=""></figure>
                         <div class="counter"><h3>2943</h3></div>
                         <p>QUALIFIED STAFF</p>
                     </div>
                     <div class="inner-facts">
-                        <figure class="counter-icon"><img src="{{asset('assets/img/master/kg.png')}}" alt=""></figure>
+                        <figure class="counter-icon"><img src="{{asset('public/assets/img/master/kg.png')}}" alt=""></figure>
                         <div class="counter"><h3>215</h3></div>
                         <p>CALORIES BURNED</p>
                     </div>
                     <div class="inner-facts">
-                        <figure class="counter-icon"><img src="{{asset('assets/img/master/smile.png')}}" alt=""></figure>
+                        <figure class="counter-icon"><img src="{{asset('public/assets/img/master/smile.png')}}" alt=""></figure>
                         <div class="counter"><h3>12099</h3></div>
                         <p>HAPPY CUSTOMERS</p>
                     </div>

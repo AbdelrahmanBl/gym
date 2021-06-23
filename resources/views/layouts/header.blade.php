@@ -26,14 +26,14 @@
         <div class="container">
             <hr class="top">
             <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="index.html"><div class="logo-brand"><img src="{{asset('assets/img/master/logo.png')}}" alt=""></div></a>
+                <a class="navbar-brand" href="index.html"><div class="logo-brand"><img src="{{asset('public/assets/img/master/logo.png')}}" alt=""></div></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbar1">
                 <ul class="navbar-nav ml-auto"> 
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">{{__('messages.pages.home.title')}}</a>
+                        <a class="nav-link" href="{{route('main.index')}}">{{__('messages.pages.home.title')}}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">ABOUT</a>

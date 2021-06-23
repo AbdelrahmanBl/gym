@@ -11,7 +11,9 @@ class mainController extends Controller
 {
     public function index(Request $request)
     {
-        App::setLocale($request->session()->get('lang', 'en'));
+        $lang = $request->session()->get('lang', 'en');
+
+        App::setLocale($lang);
         return view('pages.index');
     }
 
@@ -21,7 +23,7 @@ class mainController extends Controller
         $set_lang     = 'en';
         if($current_lang == 'en')
             $set_lang = 'ar';
-
+            // dd($set_lang);
         $request->session()->put('lang', $set_lang);
 
         return redirect($request->route);

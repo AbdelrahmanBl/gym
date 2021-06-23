@@ -13,24 +13,24 @@
     <!-- ==============================================
 		FAVICON
 		=============================================== -->  
-        <link rel="shortcut icon" href="{{asset('assets/img/master/favicon.png')}}">
+        <link rel="shortcut icon" href="{{asset('public/assets/img/master/favicon.png')}}">
              
 		<!-- ==============================================
 		CSS
 		=============================================== -->  
-        <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
-        <link rel="stylesheet" href="{{asset('assets/css/navbar.css')}}">
-        <link rel="stylesheet" href="{{asset('assets/css/stylesheet.css')}}">
-        <link rel="stylesheet" href="{{asset('assets/fonts/font-awesome/css/font-awesome.min.css')}}">
-        <link rel="stylesheet" href="{{asset('assets/css/animate.min.css')}}">
+        <link rel="stylesheet" href="{{asset('public/assets/css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{asset('public/assets/css/navbar.css')}}">
+        <link rel="stylesheet" href="{{asset('public/assets/css/stylesheet.css')}}">
+        <link rel="stylesheet" href="{{asset('public/assets/fonts/font-awesome/css/font-awesome.min.css')}}">
+        <link rel="stylesheet" href="{{asset('public/assets/css/animate.min.css')}}">
 
         @if(App::isLocale('ar'))
-        <link rel="stylesheet" href="{{asset('assets/css/stylesheet.ar.css')}}">
+        <link rel="stylesheet" href="{{asset('public/assets/css/stylesheet.ar.css')}}">
         @endif
 
         @yield('custom-css')
 
-        <script src="{{asset('assets/js/modernizr-custom.js')}}"></script>
+        <script src="{{asset('public/assets/js/modernizr-custom.js')}}"></script>
 
 </head>
 <body>
@@ -51,19 +51,19 @@
     <!-- ==============================================
 	JAVASCRIPTS
 	=============================================== -->
-    <script src="{{asset('assets/js/jquery-3.2.1.min.js')}}"></script>
-    <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('assets/js/loader.js')}}"></script>
-    <script src="{{asset('assets/js/flickity.pkgd.min.js')}}"></script> 
-    <script src="{{asset('assets/js/testimonials.js')}}"></script>
-    <script src="{{asset('assets/js/top.js')}}"></script>
-    <script src="{{asset('assets/js/counter.js')}}"></script>    
-    <script src="{{asset('assets/js/jquery.waypoints.min.js')}}"></script>
-    <script src="{{asset('assets/js/jquery.counterup.js')}}"></script>
-    <script src="{{asset('assets/js/jquery.isotope.pkgd.js')}}"></script>
-    <script src="{{asset('assets/js/filter.js')}}"></script>
-    <script src="{{asset('assets/js/jquery.magnific-popup.min.js')}}"></script>
-    <script src="{{asset('assets/js/magnific.popup.gallery.js')}}"></script>
+    <script src="{{asset('public/assets/js/jquery-3.2.1.min.js')}}"></script>
+    <script src="{{asset('public/assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('public/assets/js/loader.js')}}"></script>
+    <script src="{{asset('public/assets/js/flickity.pkgd.min.js')}}"></script> 
+    <script src="{{asset('public/assets/js/testimonials.js')}}"></script>
+    <script src="{{asset('public/assets/js/top.js')}}"></script>
+    <script src="{{asset('public/assets/js/counter.js')}}"></script>    
+    <script src="{{asset('public/assets/js/jquery.waypoints.min.js')}}"></script>
+    <script src="{{asset('public/assets/js/jquery.counterup.js')}}"></script>
+    <script src="{{asset('public/assets/js/jquery.isotope.pkgd.js')}}"></script>
+    <script src="{{asset('public/assets/js/filter.js')}}"></script>
+    <script src="{{asset('public/assets/js/jquery.magnific-popup.min.js')}}"></script>
+    <script src="{{asset('public/assets/js/magnific.popup.gallery.js')}}"></script>
 
 </body>
 </html>
