@@ -64,6 +64,7 @@
     <script src="{{asset('public/assets/js/filter.js')}}"></script>
     <script src="{{asset('public/assets/js/jquery.magnific-popup.min.js')}}"></script>
     <script src="{{asset('public/assets/js/magnific.popup.gallery.js')}}"></script>
+    <script src="{{asset('public/assets/js/app.js')}}"></script>
 
 </body>
 </html>

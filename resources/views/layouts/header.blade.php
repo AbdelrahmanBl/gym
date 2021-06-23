@@ -99,7 +99,7 @@
                     <h1 class="animated fadeInLeft">Get in the groove</h1>
                     <h5 class="animated fadeInUp">Exercise your mind and body.</h5>
                     <div class="slider-btn">
-                        <div class="animated inner-btn fadeInUp"><a href="#" class="btn btn-custom">START NOW</a></div>
+                        <div class="animated inner-btn fadeInUp"><a href="javascript:void(0)" onclick="startNow()" class="btn btn-custom">START NOW</a></div>
                     </div>
                 </div>
             </div>
@@ -109,7 +109,7 @@
                     <h1 class="animated fadeInLeft">Commit to be fit.</h1>
                     <h5 class="animated fadeInUp">Love yourself enough to work harder.</h5>
                     <div class="slider-btn">
-                        <div class="animated inner-btn fadeInUp"><a href="#" class="btn btn-custom">START NOW</a></div>
+                        <div class="animated inner-btn fadeInUp"><a href="javascript:void(0)" onclick="startNow()" class="btn btn-custom">START NOW</a></div>
                     </div>
                 </div>
             </div>
@@ -119,7 +119,7 @@
                     <h1 class="animated fadeInLeft">Turn fat into fit</h1>
                     <h5 class="animated fadeInUp">Willpower knows no obstacles.</h5>
                     <div class="slider-btn">
-                        <div class="animated inner-btn fadeInUp"><a href="#" class="btn btn-custom">START NOW</a></div>
+                        <div class="animated inner-btn fadeInUp"><a href="javascript:void(0)" onclick="startNow()" class="btn btn-custom">START NOW</a></div>
                     </div>
                 </div>
             </div>
