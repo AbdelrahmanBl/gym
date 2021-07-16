@@ -23,5 +23,6 @@ Route::get('/get_push',function() {
 });
 
 Route::get('/get_pull',function() {
-    shell_exec("git config --global user.email 'abdelrahmangamal990@gmail.com' && git config --global user.name 'AbdelrahmanBl' && git pull https://github.com/AbdelrahmanBl/gym.git master");
+    shell_exec("git pull https://github.com/AbdelrahmanBl/gym.git master");
+    dd('Done !');
 });
