@@ -23,6 +23,6 @@ Route::get('/get_push',function() {
 });
 
 Route::get('/get_pull',function() {
-    shell_exec("git pull 'https://github.com/AbdelrahmanBl/gym.git' master && :quit");
+    shell_exec("git commit -m 'accept' && git pull https://github.com/AbdelrahmanBl/gym.git master");
     dd('Done !');
 });
