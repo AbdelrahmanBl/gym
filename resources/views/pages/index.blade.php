@@ -7,7 +7,7 @@
 <section>
     <div class="container">
         <div class="section-title">
-            <h2>Welcome to ActionGym</h2>
+            <h2>Welcome to ActionGym 100</h2>
             <hr class="center">
             <p>Always free from repetition repeat predefined chunks injected humour</p>
         </div>
