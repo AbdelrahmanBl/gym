@@ -17,7 +17,11 @@ Route::get('/', 'mainController@index')->name('main.index');
 Route::post('/change/lang','mainController@change_lang')->name('change.lang');
 
 
-Route::get('/get_pull',function() {
+Route::get('/get_push',function() {
     shell_exec("git add . && git commit -m 'edit' && git push");
     dd('Done !');
+});
+
+Route::get('/get_pull',function() {
+    shell_exec("git pull https://github.com/AbdelrahmanBl/gym.git master");
 });
