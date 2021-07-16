@@ -11,7 +11,7 @@ class mainController extends Controller
 {
     public function index(Request $request)
     {
-        #dd('zz');
+        dd('zz');
         $lang = $request->session()->get('lang', 'en');
         
         App::setLocale($lang);
