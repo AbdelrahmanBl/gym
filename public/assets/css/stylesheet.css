@@ -10,6 +10,9 @@
     src: url('../fonts/Aileron-Regular.otf');
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300&display=swap');
+
+
 /*
 	Theme Name: Action Gym.
 	Created : September 29 2017
@@ -50,6 +53,9 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+
+.font-family-cairo { font-family: 'Cairo','system-ui', sans-serif !important; }
+
 
 html, body, div, span, applet, object, iframe,blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -269,6 +275,8 @@ header{
 
 @media screen and (max-width: 768px) {
     .header-mode-2 {height: 4.5rem;}
+
+    .color-swap { color: #000 !important; }
 }
 
 .top-header .container{
