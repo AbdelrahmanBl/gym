@@ -19,8 +19,9 @@ class mainController extends Controller
     public function checkout(Request $request)
     {
         $this->defineDefaultLang($request);
+        $questions = json_encode(__('questions'));
         
-        return view('pages.checkout');
+        return view('pages.checkout',compact('questions'));
     }
 
     public function change_lang(Request $request)

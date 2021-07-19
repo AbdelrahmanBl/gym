@@ -12,7 +12,9 @@ return [
             'description'   => '',
             'keywords'      => '',
             'header-title'  => 'BUILD YOUR PERFECT BODY',
+            'header-title-c'=> 'MAKE YOUR CHECKOUT NOW',
             'header-desc'   => 'Get a personalized workout program',
+            'header-desc-c' => 'Pay with your favourite payment',
         ],
     ],
     'lang'  => [

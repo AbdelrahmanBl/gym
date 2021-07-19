@@ -1,12 +1,12 @@
 {{-- Question With Large Image [ Main Question ] --}}
-<div>
-    <h2 class="text-center">{{$question['question']}}</h2>
-    <div class="d-flex justify-content-between align-items-center flex-wrap">
-        @foreach($question['responds'] as $respond)
-        <div class="d-flex justify-content-between col-12 col-md-5 col-lg-3 mt-2 responsive-div" style="cursor: pointer;">
-            <p class="float-left">{{$respond['text']}}</p>
-            <div><img src="{{asset('public/assets/img/questions')}}/{{$respond['img']}}"></div>
-        </div>
-        @endforeach
+<h2 class="text-center mt-2">{{$question['question']}}</h2>
+<div class="d-flex justify-content-between align-items-center flex-wrap">
+    @php $counter = 1; @endphp
+    @foreach($question['responds'] as $respond)
+    <div onclick="addRespond(this,{{$pos}})" id="div-{{$pos}}-{{$counter}}" data-respond="{{$counter}}" class="d-flex justify-content-between align-items-center col-12 col-md-5 col-lg-3 mt-2 responsive-div" style="cursor: pointer;">
+        <p class="float-left">{{$respond['text']}}</p>
+        <div><img src="{{asset('public/assets/img/questions')}}/{{$respond['img']}}"></div>
     </div>
+    @php $counter++; @endphp
+    @endforeach
 </div>

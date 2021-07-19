@@ -21,8 +21,8 @@
 
 
 .selected-option {
-    border: 1px solid #000;
-    padding: 1rem 0;
+    border: 2px solid #000;
+    /* padding: 1rem 0; */
 }
 
 .responsive-div img{ height: 320px; }
@@ -38,6 +38,8 @@
         height: 160px;
         overflow: hidden;
     }
+
+    .responsive-div img { margin-top: 170px; }
 }
 
 @media screen and (max-width: 320px) {
