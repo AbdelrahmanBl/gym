@@ -6,15 +6,15 @@ return [
         'responds'  => [
             [
                 'text'  => 'فقدان الوزن',
-                'img'   => 'image1.webp'
+                'img'   => 'image1.jpg',
             ],
             [
                 'text'  => 'اكتساب كتلة العضلات',
-                'img'   => 'image2.webp'
+                'img'   => 'image2.jpg'
             ],
             [
                 'text'  => 'تحسين القدرة على التحمل',
-                'img'   => 'image3.webp'
+                'img'   => 'image3.jpg'
             ]
         ]
     ]
