@@ -32,9 +32,9 @@
             @include("questions.{$question['type']}",['question' => $question])
         @endforeach
         
-        <div class="d-flex justify-content-center mt-5" >
+        {{-- <div class="d-flex justify-content-center mt-5" >
             <button class="btn" style="font-size: 16px !important;" onclick="nextStep()" type="button">{{__('messages.continue')}}</button>
-        </div>
+        </div> --}}
     </div>
 </section>
 @endsection

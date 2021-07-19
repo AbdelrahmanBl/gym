@@ -19,10 +19,13 @@
 
 .small-numbers {font-size: smaller;}
 
+
 .selected-option {
     border: 1px solid #000;
     padding: 1rem 0;
 }
+
+.responsive-div img{ height: 320px; }
 
 @media screen and (max-width: 1200px) {
     .step-bar { width: 89%; }
@@ -30,6 +33,11 @@
 
 @media screen and (max-width: 768px) {
     .step-bar { width: 80%; }
+
+    .responsive-div {
+        height: 160px;
+        overflow: hidden;
+    }
 }
 
 @media screen and (max-width: 320px) {

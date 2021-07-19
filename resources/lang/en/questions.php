@@ -6,15 +6,15 @@ return [
         'responds'  => [
             [
                 'text'  => 'Lose Weight',
-                'img'   => 'image1.webp'
-            ],
-            [
-                'text'  => 'Gain Muscle Mass',
-                'img'   => 'image2.webp'
+                'img'   => 'image1.jpg',
             ],
             [
                 'text'  => 'Imporove Stamina',
-                'img'   => 'image3.webp'
+                'img'   => 'image2.jpg',
+            ],
+            [
+                'text'  => 'Gain Muscle Mass',
+                'img'   => 'image3.jpg',
             ]
         ]
     ]
