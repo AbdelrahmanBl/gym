@@ -262,6 +262,15 @@ header{
     height: 900px;
 }
 
+.header-mode-2 {
+    height: 8rem;
+    background: #1a1a1a;
+}
+
+@media screen and (max-width: 768px) {
+    .header-mode-2 {height: 4.5rem;}
+}
+
 .top-header .container{
     margin-top: 20px;
 }

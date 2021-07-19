@@ -11,11 +11,16 @@ class mainController extends Controller
 {
     public function index(Request $request)
     {
-        #dd('zz');
-        $lang = $request->session()->get('lang', 'en');
+        $this->defineDefaultLang($request);
         
-        App::setLocale($lang);
         return view('pages.index');
+    }
+
+    public function checkout(Request $request)
+    {
+        $this->defineDefaultLang($request);
+        
+        return view('pages.checkout');
     }
 
     public function change_lang(Request $request)
@@ -28,5 +33,11 @@ class mainController extends Controller
         $request->session()->put('lang', $set_lang);
 
         return redirect($request->route);
+    }
+
+    public function defineDefaultLang($request)
+    {
+        $lang = $request->session()->get('lang', 'en');
+        App::setLocale($lang);
     }
 }

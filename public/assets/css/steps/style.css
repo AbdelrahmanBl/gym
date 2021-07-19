@@ -1,0 +1,37 @@
+.step-bar,.step {
+    height: 4px;
+}
+.step-bar {
+    width: 92%;
+    background: #000;
+}
+.step {
+    width: 0;
+    background: red;
+}
+
+.btn-small {
+    border-radius: 0;
+    padding: 0.05rem 0.3rem;
+}
+
+.btn-small:focus { box-shadow: 0 0 0 0 #000 !important; }
+
+.small-numbers {font-size: smaller;}
+
+.selected-option {
+    border: 1px solid #000;
+    padding: 1rem 0;
+}
+
+@media screen and (max-width: 1200px) {
+    .step-bar { width: 89%; }
+}
+
+@media screen and (max-width: 768px) {
+    .step-bar { width: 80%; }
+}
+
+@media screen and (max-width: 320px) {
+    .step-bar { width: 75%; }
+}

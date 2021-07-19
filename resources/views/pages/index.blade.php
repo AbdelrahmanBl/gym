@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app',['mode' => 1])
 @section('title',__('messages.pages.home.title'))
 @section('meta-description',__('messages.pages.home.description'))
 @section('meta-keywords',__('messages.pages.home.keywords'))
@@ -7,7 +7,7 @@
 <section>
     <div class="container">
         <div class="section-title">
-            <h2>Welcome to ActionGym 100</h2>
+            <h2>Welcome to ActionGym</h2>
             <hr class="center">
             <p>Always free from repetition repeat predefined chunks injected humour</p>
         </div>

@@ -14,15 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'mainController@index')->name('main.index');
+Route::get('/checkout', 'mainController@checkout')->name('main.checkout');
 Route::post('/change/lang','mainController@change_lang')->name('change.lang');
-
-
-Route::get('/get_push',function() {
-    shell_exec("git add . && git commit -m 'edit' && git push");
-    dd('Done !');
-});
-
-Route::get('/get_pull',function() {
-    shell_exec("git commit -m 'accept' && git pull https://github.com/AbdelrahmanBl/gym.git master");
-    dd('Done !');
-});
