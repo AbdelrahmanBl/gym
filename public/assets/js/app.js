@@ -86,9 +86,36 @@ function addRespond(_this,pos) {
             updateStorage('CHECKOUT','s')
             return 0;
         }
+        
+        if(pos == 1) {
+            handleHidden2()
+        }
         $('#div-'+(pos + 1)).show('fast')
         nextStep()
     },500)
+}
+
+function handleHidden2() {
+    let pos = 1
+    let no  = parseInt(getStorage().responds[pos-1])
+
+    $(".show-all").addClass('force-hide')
+    let arr = []
+    switch (no) {
+        case 1:
+            arr = [1,2]
+            break;
+        case 2:
+            arr = [3,4,5]
+            break;
+        case 3:
+            arr = [6,7,8]
+            break;
+    }
+
+    arr.forEach(item => {
+        $("#div-"+(parseInt(pos)+1)+"-"+item).removeClass('force-hide')
+    })
 }
 
 function handleStorage() {
@@ -110,6 +137,8 @@ console.log(getStorage());
     }
     else if(getStorage().status == 'RESPOND') {
         let pos = getStorage().pos
+        handleHidden2()
+        
         if(pos > 1) {
             $('#div-1').hide()
             $('#div-'+ pos ).show('fast')
@@ -137,13 +166,12 @@ function selectRespond(param = null) {
 
 function selectRespondSwitches(res,param,pos) {
     let type = parseInt(questions[pos - 1]['type'])
-    switch (type) {
-        case 1:
-            if(param == null)
-                param = `div-${pos}-${res}`
-            $('.selected-option').removeClass('selected-option')
+    if([1,2].includes(type)) {
+        if(param == null)
+            param = `div-${pos}-${res}`
+        $('.selected-option').removeClass('selected-option')
+        if(document.getElementById(param))
             document.getElementById(param).classList.add('selected-option')
-            break;
     }
 }
 

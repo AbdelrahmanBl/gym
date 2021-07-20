@@ -25,6 +25,8 @@
     /* padding: 1rem 0; */
 }
 
+.force-hide { display: none !important; }
+
 .responsive-div img{ height: 320px; }
 
 @media screen and (max-width: 1200px) {
