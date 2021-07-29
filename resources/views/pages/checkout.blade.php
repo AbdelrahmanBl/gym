@@ -29,15 +29,13 @@
         </div>
 
         <input type="hidden" value="{{$questions}}" id="questions">
+        <input type="hidden" value="{{asset('public/assets/img/questions')}}" id="questions-path">
         @foreach(__('questions') as $question)
         <div id="div-{{$loop->iteration}}" style="@if($loop->iteration > 1) display: none; @endif">
             @include("questions.{$question['type']}",['question' => $question , 'pos' => $loop->iteration])
         </div>
         @endforeach
         
-        {{-- <div class="d-flex justify-content-center mt-5" >
-            <button class="btn" style="font-size: 16px !important;" onclick="nextStep()" type="button">{{__('messages.continue')}}</button>
-        </div> --}}
     </div>
 
     <div class="container" id="checkout-container" style="display: none;">

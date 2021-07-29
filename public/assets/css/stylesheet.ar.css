@@ -6,6 +6,11 @@
 
 .fa { font-family: FontAwesome !important; }
 
+.choose-box { 
+    margin-right: 0;
+    margin-left: 0.3rem; 
+}
+
 body {
     direction: rtl;
     text-align: right;

@@ -16,8 +16,8 @@
 <nav>
     <div class="container">
         <hr class="top">
-        <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" href="index.html"><div class="logo-brand"><img src="{{asset('public/assets/img/master/logo.png')}}" alt=""></div></a>
+        <nav class="d-flex align-items-center navbar navbar-expand-lg">
+            <a class="navbar-brand" href="index.html"><div class="logo-brand"><img src="{{asset('public/assets/img/gym/logo.png')}}" style="margin-top: -0.4rem;" alt=""></div></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>

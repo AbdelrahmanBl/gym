@@ -26,6 +26,8 @@ function detectMob() {
 // Define Steps By Length
 let questions    = []
 let responds     = []
+let loading      = false
+let questionsPath
 let stepsLength  = 0
 let counterSteps = 0
 let currentStep  = 0
@@ -36,9 +38,12 @@ $(document).ready(() => {
     stepsLength  = parseInt(steps.attr('data-count'))
     counterSteps = width / stepsLength 
     
-    questions   = JSON.parse($("#questions").val())
+    questions       = JSON.parse($("#questions").val())
+    questionsPath   = $("#questions-path").val()
+    
     handleStorage()
     currentStep = parseInt(getStorage().pos)
+    responds    = getStorage().responds
 })
 function nextStep() {
     if(steps.width() > step.width() && currentStep < stepsLength) {
@@ -66,11 +71,41 @@ function updateStep(no) {
     $("#step-counter").html(`${no}/${stepsLength}`);
 }
 
-function addRespond(_this,pos) {
-    let respond = $(_this).attr('data-respond');
+function removeCheckBox(_this) {
+    let pos = $(_this).attr('data-pos')
+    $(`.box-${pos}`).prop('checked',false)
+}
 
-    selectRespond($(_this).attr('id'))
-    
+function handleBalance(_this) {
+    let pos          = $(_this).attr('data-pos')
+    let value        = parseInt($(_this).val())
+    let setTextValue = questions[pos-1]['responds'][value].text
+    let setImageValue = questions[pos-1]['responds'][value].img
+
+    $(`#balance-preview-${pos}`).text(setTextValue)
+    $(`#image-preview-${pos}`).prop('src',`${questionsPath}/${setImageValue}`)
+}
+
+function addRespond(_this,pos,type='default') {
+    if(loading == true) return 0;
+    loading = true
+    let respond
+    if(type == 'choose') {
+        respond = []
+        let qNo = questions[pos-1].responds.length
+        for(let i = 1 ; i <= qNo ; i++) {
+            let input = $(`#input-${pos}-${i}`)
+            if(input.is(':checked')) respond.push(input.val())
+        }
+    }
+    else if(type == 'balance') {
+        respond = $(`#range-${pos}`).val()
+    }
+    else {
+        respond = $(_this).attr('data-respond');
+        selectRespond($(_this).attr('id'))
+    }
+
     if(responds[pos-1])
         responds[pos-1] = respond
     else responds.push(respond)
@@ -92,6 +127,7 @@ function addRespond(_this,pos) {
         }
         $('#div-'+(pos + 1)).show('fast')
         nextStep()
+        loading = false
     },500)
 }
 
@@ -119,8 +155,6 @@ function handleHidden2() {
 }
 
 function handleStorage() {
-console.log(getStorage());
-
     let obj = {
         status: "RESPOND" ,  // CHECKOUT
         pos: 1,
@@ -170,8 +204,31 @@ function selectRespondSwitches(res,param,pos) {
         if(param == null)
             param = `div-${pos}-${res}`
         $('.selected-option').removeClass('selected-option')
-        if(document.getElementById(param))
+        if(document.getElementById(param)) {
             document.getElementById(param).classList.add('selected-option')
+        }
+    }
+    else if(type == 3) {
+        if(res && res.length > 0) {
+            res.forEach(i => {
+                $(`#input-${pos}-${i}`).prop('checked',true)
+            })
+        }else {
+            $(`#none-${pos}`).prop('checked',true)
+        }
+        
+    }
+    else if(type == 4) {
+        if(res) {
+            let img = questions[pos-1]['responds'][parseInt(res)].img
+            let text = questions[pos-1]['responds'][parseInt(res)].text
+            
+            $(`#image-preview-${pos}`).prop('src',`${questionsPath}/${img}`)
+            $(`#balance-preview-${pos}`).text(text)
+            $(`#range-${pos}`).val(res)
+        }else {
+            $(`#image-preview-${pos}`).prop('src',`${questionsPath}/0.jpg`)
+        }
     }
 }
 

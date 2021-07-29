@@ -1714,6 +1714,16 @@ hr.center{
   margin-bottom: 20px;
 }
 
+.choose-box { margin-right: 0.3rem; }
+
+.custom-p { padding: 0.25rem 1.5rem; }
+
+.hr {
+    border-top: 1px solid #000;
+    margin: 0.5rem auto;
+    width: 10rem;
+}
+
 @media screen and (prefers-reduced-motion: reduce) {
   .form-control {
     transition: none;

@@ -237,13 +237,14 @@ nav{
 }
     
 .navbar-toggler-icon {
-    background-image: url("../img/master/bars.png");
+    background-image: url("../img/master/bars-hover.png");
+    /* background-image: url("../img/master/bars.png"); */
     transition: 0.3s;
 }  
        
-.navbar-toggler-icon:hover {
-    background-image: url("../img/master/bars-hover.png");
-}  
+/* .navbar-toggler-icon:hover {
+    background-image: url("../img/master/bars.png");
+}   */
     
 .navbar-toggler:focus, .navbar-toggler:active {
     outline: none;
