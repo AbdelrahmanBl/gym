@@ -22,4 +22,6 @@ return [
         'ar'    => 'العربية'
     ],
     'continue' => 'Continue',
+    'height'   => 'Height (cm)',
+    'weight'   => 'Weight (kg)',
 ];

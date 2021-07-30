@@ -22,4 +22,6 @@ return [
         'ar'    => 'ARABIC'
     ],
     'continue' => 'متابعة',
+    'height'   => 'الطول (سم)',
+    'weight'   => 'الوزن (كج)',
 ];

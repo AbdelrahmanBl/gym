@@ -35,7 +35,9 @@
             @include("questions.{$question['type']}",['question' => $question , 'pos' => $loop->iteration])
         </div>
         @endforeach
-        
+        <div class="text-center mt-2">
+            <span id="error-span" class="error"></span>
+        </div>
     </div>
 
     <div class="container" id="checkout-container" style="display: none;">

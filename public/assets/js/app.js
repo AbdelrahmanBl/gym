@@ -33,6 +33,8 @@ let counterSteps = 0
 let currentStep  = 0
 let step         = $("#step")
 let steps        = $("#custom-steps")
+let error        = $("#error-span")
+let lang         = document.documentElement.lang
 $(document).ready(() => {
     let width      = steps.width()
     stepsLength  = parseInt(steps.attr('data-count'))
@@ -46,6 +48,7 @@ $(document).ready(() => {
     responds    = getStorage().responds
 })
 function nextStep() {
+    error.text('')
     if(steps.width() > step.width() && currentStep < stepsLength) {
         step.width(step.width() + counterSteps)
         currentStep++
@@ -56,6 +59,7 @@ function nextStep() {
 }
 
 function prevStep() {
+    error.text('')
     if(steps.width() >= step.width() && currentStep > 1) {
         step.width(step.width() - counterSteps)
         $('#div-'+currentStep).hide()
@@ -86,7 +90,7 @@ function handleBalance(_this) {
     $(`#image-preview-${pos}`).prop('src',`${questionsPath}/${setImageValue}`)
 }
 
-function addRespond(_this,pos,type='default') {
+function addRespond(_this,pos,type='default',required=false) {
     if(loading == true) return 0;
     loading = true
     let respond
@@ -97,9 +101,44 @@ function addRespond(_this,pos,type='default') {
             let input = $(`#input-${pos}-${i}`)
             if(input.is(':checked')) respond.push(input.val())
         }
+        
+        if(required == true && respond.length == 0) {
+            displayError()
+            return 0
+        }
+    }
+    else if(type == 'chooseOne') {
+        respond = null
+        let qNo = questions[pos-1].responds.length
+        for(let i = 1 ; i <= qNo ; i++) {
+            let input = $(`#input-${pos}-${i}`)
+            if(input.is(':checked')) respond = input.val()
+        }
+        
+        // required == true && 
+        if(respond == null) {
+            displayError()
+            return 0
+        }
     }
     else if(type == 'balance') {
         respond = $(`#range-${pos}`).val()
+    }
+    else if(type == 'input') {
+        respond = $(`#input-${pos}`).val()
+        if(required == true && respond == '') {
+            displayError()
+            return 0
+        }
+    }
+    else if(type == 'heightWeight') {
+        let height = $(`#height-${pos}`).val()
+        let weight = $(`#weight-${pos}`).val()
+        respond = [height,weight]
+        if(required == true && (!height || !weight)) {
+            displayError()
+            return 0
+        }
     }
     else {
         respond = $(_this).attr('data-respond');
@@ -129,6 +168,12 @@ function addRespond(_this,pos,type='default') {
         nextStep()
         loading = false
     },500)
+}
+
+function displayError() {
+    let msg = (lang == 'en')? '* Please enter item' : '* من فضلك أدخل شئ' 
+    error.text(msg)
+    loading = false
 }
 
 function handleHidden2() {
@@ -219,16 +264,33 @@ function selectRespondSwitches(res,param,pos) {
         
     }
     else if(type == 4) {
+        let allow = questions[pos-1]['allowImg']
         if(res) {
             let img = questions[pos-1]['responds'][parseInt(res)].img
             let text = questions[pos-1]['responds'][parseInt(res)].text
             
-            $(`#image-preview-${pos}`).prop('src',`${questionsPath}/${img}`)
+            if(allow)
+                $(`#image-preview-${pos}`).prop('src',`${questionsPath}/${img}`)
             $(`#balance-preview-${pos}`).text(text)
             $(`#range-${pos}`).val(res)
         }else {
-            $(`#image-preview-${pos}`).prop('src',`${questionsPath}/0.jpg`)
+            if(allow)
+                $(`#image-preview-${pos}`).prop('src',`${questionsPath}/${questions[pos-1]['responds'][questions[pos-1]['defaultIndex']].img}`)
         }
+    }
+    else if(type == 5) {
+        if(res) {
+            $(`#input-${pos}`).val(res)
+        }
+    }
+    else if(type == 6) {
+        if(res && res.length > 0) {
+            $(`#height-${pos}`).val(res[0])
+            $(`#weight-${pos}`).val(res[1])
+        }
+    }
+    else if(type == 7) {
+        if(res) $(`#input-${pos}-${parseInt(res)}`).prop('checked',true)
     }
 }
 

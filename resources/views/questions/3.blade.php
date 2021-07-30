@@ -19,13 +19,13 @@
 
     @if(isset($question['none']))
     <div class="hr"></div>
-    <div class="d-flex align-items-center col-12 col-lg-3 m-auto responsive-div" style="cursor: pointer;">
+    <div class="d-flex align-items-center col-12 col-lg-3 m-auto" style="cursor: pointer;">
         <input onclick="removeCheckBox(this)" data-pos="{{$pos}}" id="none-{{$pos}}" class="form-field choose-box" type="checkbox" />
         <label for="none-{{$pos}}" class="float-left m-0 none">{{$question['none']}}</label>
     </div>
     @endif
 </div>
 @if(isset($question['btn']))
-    @include('content.btn',['pos' => $pos, 'type' => 'choose'])
+    @include('content.btn',['type' => 'choose'])
 @endif
 
