@@ -46,6 +46,9 @@
             <hr class="center">
             <p>{{__('messages.pages.checkout.header-desc-c')}}</p>
         </div>
+        <div class="d-flex justify-content-center">
+            @include('content.paypal')
+        </div>
     </div>
 </section>
 @endsection

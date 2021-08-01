@@ -65,5 +65,6 @@
     <script src="{{asset('public/assets/js/jquery.magnific-popup.min.js')}}"></script>
     <script src="{{asset('public/assets/js/magnific.popup.gallery.js')}}"></script>
     <script src="{{asset('public/assets/js/app.js')}}"></script>
+    @yield('custom-js')
 </body>
 </html>

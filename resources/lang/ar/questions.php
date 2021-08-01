@@ -2,18 +2,18 @@
 return [
     [
         'type'      => 1,
-        'question'  => 'Choose your goal',
+        'question'  => 'اختر هدفك',
         'responds'  => [
             [
-                'text'  => 'Lose Weight',
+                'text'  => 'فقدان الوزن',
                 'img'   => 'image1.jpg',
             ],
             [
-                'text'  => 'Imporove Stamina',
+                'text'  => 'تحسين القدرة على التحمل',
                 'img'   => 'image2.jpg',
             ],
             [
-                'text'  => 'Gain Muscle Mass',
+                'text'  => 'اكتساب كتلة العضلات',
                 'img'   => 'image3.jpg',
             ]
         ]
@@ -233,24 +233,6 @@ return [
             ],
             [
                 'text'  => '10'
-            ]
-        ]
-    ],
-    [
-        'type'      => 1,
-        'question'  => 'Choose your goal',
-        'responds'  => [
-            [
-                'text'  => 'Lose Weight',
-                'img'   => 'image1.jpg',
-            ],
-            [
-                'text'  => 'Imporove Stamina',
-                'img'   => 'image2.jpg',
-            ],
-            [
-                'text'  => 'Gain Muscle Mass',
-                'img'   => 'image3.jpg',
             ]
         ]
     ],
