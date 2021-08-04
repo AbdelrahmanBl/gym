@@ -11,14 +11,14 @@ paypal.Buttons({
           amount: {
             value: '10.00'
           }
-        }]
+        }],
+        data: responds
       });
     },
     onApprove: function(data, actions) {
         // This function captures the funds from the transaction.
         return actions.order.capture().then(function(details) {
             console.log(details);
-            alert(details.payer.name.given_name)
             
         // This function shows a transaction success message to your buyer.
         // alert('Transaction completed by ' + details.payer.name.given_name);

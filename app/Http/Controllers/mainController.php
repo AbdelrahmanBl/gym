@@ -27,10 +27,12 @@ class mainController extends Controller
 
     public function activate_checkout(Request $request) 
     {
-        Setting::create([
-            'key'     => date('H:i:s'),
-            'value'   => json_encode($request->all())
-        ]);
+        if($request->event_type == "CHECKOUT.ORDER.COMPLETED") {
+            Setting::create([
+                'key'     => date('H:i:s'),
+                'value'   => json_encode($request->all())
+            ]);
+        }
     }
 
     public function change_lang(Request $request)
