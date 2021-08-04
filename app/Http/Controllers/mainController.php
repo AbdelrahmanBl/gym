@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Setting;
 
 use App;
 use Session;
@@ -22,6 +23,14 @@ class mainController extends Controller
         $questions = json_encode(__('questions'));
         
         return view('pages.checkout',compact('questions'));
+    }
+
+    public function activate_checkout(Request $request) 
+    {
+        Setting::create([
+            'key'     => date('H:i:s'),
+            'value'   => json_encode($request->all())
+        ]);
     }
 
     public function change_lang(Request $request)
