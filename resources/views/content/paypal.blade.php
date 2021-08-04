@@ -12,7 +12,11 @@ paypal.Buttons({
             value: '10.00'
           }
         }],
-        data: responds
+        metadata: {
+          supplementary_data: [{
+            data: getStorage().responds
+          }]
+        }
       });
     },
     onApprove: function(data, actions) {
