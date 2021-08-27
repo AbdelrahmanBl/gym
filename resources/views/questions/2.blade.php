@@ -5,7 +5,7 @@
     @foreach($question['responds'] as $respond)
     <div onclick="addRespond(this,{{$pos}})" id="div-{{$pos}}-{{$counter}}" data-respond="{{$counter}}" class="transition-smooth d-flex justify-content-between align-items-center col-12 col-md-5 col-lg-3 mt-2 responsive-div show-all" style="cursor: pointer;">
         <p class="float-left">{{$respond['text']}}</p>
-        <div><img src="{{asset('public/assets/img/questions')}}/{{$respond['img']}}"></div>
+        <div><img src="{{asset("public/assets/img/questions/{$questionIde}")}}/{{$respond['img']}}"></div>
     </div>
     @php $counter++; @endphp
     @endforeach

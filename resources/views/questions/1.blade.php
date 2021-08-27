@@ -10,7 +10,7 @@
             <p class="float-left m-0 c-desc">{{$respond['desc']}}</p>
             @endif
         </div>
-        <div><img src="{{asset('public/assets/img/questions')}}/{{$respond['img']}}"></div>
+        <div><img src="{{asset("public/assets/img/questions/{$questionIde}")}}/{{$respond['img']}}"></div>
     </div>
     @php $counter++; @endphp
     @endforeach

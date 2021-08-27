@@ -16,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'mainController@index')->name('main.index');
 Route::get('/checkout', 'mainController@checkout')->name('main.checkout');
 Route::post('/change/lang','mainController@change_lang')->name('change.lang');
+Route::post('/change/gender','mainController@change_gender')->name('change.gender');

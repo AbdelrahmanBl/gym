@@ -15,7 +15,7 @@
         </div>
         @if(isset($respond['img']))
         <div class="mt-2">
-            <img src="{{asset('public/assets/img/questions')}}/{{$respond['img']}}" alt="">
+            <img src="{{asset("public/assets/img/questions/{$questionIde}")}}/{{$respond['img']}}" alt="">
         </div>
         @endif
     </div>

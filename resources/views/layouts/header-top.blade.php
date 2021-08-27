@@ -35,28 +35,20 @@
                 <li class="nav-item">
                     <a class="nav-link" href="packages.html">PACKAGES</a>
                 </li>
-                {{-- <li class="nav-item active dropdown">
-                    <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">PAGES <span class="caret-drop"></span></a>
-                    <ul class="dropdown-menu">
-                        <li class="divider-top"></li>
-                        <li><a class="dropdown-item" href="blog-left-side.html">Blog Leftside</a></li>
-                        <li class="divider"></li>
-                        <li><a class="dropdown-item" href="blog-right-side.html">Blog Rightside</a></li>
-                        <li class="divider"></li>
-                        <li><a class="dropdown-item" href="blog-single.html">Blog Single</a></li>
-                        <li class="divider"></li>
-                        <li><a class="dropdown-item" href="faq.html">Faq</a></li>
-                        <li class="divider"></li>
-                        <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
-                        <li class="divider"></li>
-                        <li><a class="dropdown-item" href="trainers.html">Trainers</a></li>
-                        <li class="divider"></li>
-                        <li><a class="dropdown-item" href="404-error-page.html">404 Error Page</a></li>
-                    </ul>
-                </li> --}}
                 <li class="nav-item">
                     <a class="nav-link" href="contact-us.html">CONTACT</a>
                 </li>
+                @if(isset($checkoutPage))
+                <li class="nav-item active dropdown" @if(App::isLocale('ar')) style="direction: rtl;" @endif>
+                    <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">{{__('messages.gender')}} <span class="caret-drop"></span></a>
+                    <ul class="dropdown-menu" @if(App::isLocale('ar')) style="text-align: right;" @endif>
+                        <li class="divider-top"></li>
+                        <li><a class="dropdown-item" href="{{route('main.checkout')}}?gender=male">{{__('messages.male')}}</a></li>
+                        <li class="divider"></li>
+                        <li><a class="dropdown-item" href="{{route('main.checkout')}}?gender=female">{{__('messages.female')}}</a></li>
+                    </ul>
+                </li>
+                @endif
                 <li class="nav-item">
                     <form action="{{route('change.lang')}}" method="POST" id="lang-form">
                         {{ csrf_field() }}

@@ -20,9 +20,18 @@ class mainController extends Controller
     public function checkout(Request $request)
     {
         $this->defineDefaultLang($request);
-        $questions = json_encode(__('questions'));
+
+        $checkoutPage = true;
+        $questionIde  = 'male';
+        $gender       = request()->get('gender');
+        if($gender && in_array($gender,['male','female'])) {
+            if($gender == 'female')
+                $questionIde = 'female';
+        }
         
-        return view('pages.checkout',compact('questions'));
+        $questions   = json_encode(__("{$questionIde}"));
+        
+        return view('pages.checkout',compact('questions','questionIde','checkoutPage'));
     }
 
     public function activate_checkout(Request $request) 
