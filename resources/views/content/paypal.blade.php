@@ -1,19 +1,36 @@
 <div id="paypal-button-container" style="width: 20rem;"></div>
 
 @section('custom-js')
-<script src="https://www.paypal.com/sdk/js?client-id=AVhzVhyuAlAVzQTKY2YQUaRVCARoGi1eqtWEwZ6TBoP3R_YdaE3HYZ-k6E3AB2GJ_XhQkT3okLBE_rQ0&components=buttons&locale={{app()->islocale('ar')? 'ar_EG' : 'en_US'}}"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=AVhzVhyuAlAVzQTKY2YQUaRVCARoGi1eqtWEwZ6TBoP3R_YdaE3HYZ-k6E3AB2GJ_XhQkT3okLBE_rQ0&components=buttons&currency=USD&locale={{app()->islocale('ar')? 'ar_EG' : 'en_US'}}"></script>
 <script>
 paypal.Buttons({
-    createOrder: function(data, actions) {
+    createOrder: async function(data, actions) {
       // Set up the transaction
-      return actions.order.create({
+      amount =  '10.00'
+      order  = await actions.order.create({
         purchase_units: [{
           amount: {
-            value: '10.00'
+            value: amount
           }
-        }]
-        
+        }]  
       });
+      
+      $.ajax({
+        url: "{{route('register.payment')}}",
+        method: 'POST',
+        data: {
+          _token: $('meta[name=token]').attr('content') ,
+          order_id: order ,
+          responds: getStorage().responds,
+          amount: amount,
+        },
+        success: function() {
+
+        }
+      })
+      
+      return order;
+      
     },
     onApprove: function(data, actions) {
         // This function captures the funds from the transaction.
@@ -28,7 +45,7 @@ paypal.Buttons({
         // Show a cancel page, or return to cart
         // alert(JSON.stringify(data))
         console.log(data);
-        alert("Canceled !")
+        // alert("Canceled !")
     },
     onError: function (err) {
       console.log(err);
