@@ -44,8 +44,8 @@ class mainController extends Controller
             ]);
             $where = [
                 'order_id'      => $request['resource']['id'],
-                'amount'        => $request['purchase_units'][0]['amount']['value'],
-                'currency'      => $request['purchase_units'][0]['amount']['currency_code'],
+                'amount'        => $request['resource']['purchase_units'][0]['amount']['value'],
+                'currency'      => $request['resource']['purchase_units'][0]['amount']['currency_code'],
                 'is_verified'   => 0
             ];
             $chk = RegisterPayment::where($where)->first();
