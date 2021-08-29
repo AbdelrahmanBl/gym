@@ -23,9 +23,11 @@ paypal.Buttons({
           order_id: order ,
           responds: getStorage().responds,
           amount: amount,
+          gender: $('#gt_gender').val()
         },
-        success: function() {
-
+        success: function(data) {
+          console.log(data);
+          
         }
       })
       
@@ -36,20 +38,18 @@ paypal.Buttons({
         // This function captures the funds from the transaction.
         return actions.order.capture().then(function(details) {
             console.log(details);
-            alert("Approved !")
+            clearStorage()
+            location.href = "{{route('main.checkout.success')}}"
         // This function shows a transaction success message to your buyer.
         // alert('Transaction completed by ' + details.payer.name.given_name);
         });
     },
     onCancel: function (data) {
         // Show a cancel page, or return to cart
-        // alert(JSON.stringify(data))
         console.log(data);
-        // alert("Canceled !")
     },
     onError: function (err) {
       console.log(err);
-      // alert(err.data.name)
     }
   }).render('#paypal-button-container');
 </script>

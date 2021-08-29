@@ -6,8 +6,11 @@ use Illuminate\Http\Request;
 use App\Models\Setting;
 use App\Models\RegisterPayment;
 
+use App\Mail\SendEmail;
+
 use App;
 use Session;
+use Mail;
 
 class mainController extends Controller
 {
@@ -38,22 +41,31 @@ class mainController extends Controller
     public function activate_checkout(Request $request) 
     {
         if($request['event_type'] == "CHECKOUT.ORDER.COMPLETED") {
-            Setting::create([
-                'key'     => date('H:i:s'),
-                'value'   => json_encode($request->all())
-            ]);
+            // Setting::create([
+            //     'key'     => date('H:i:s'),
+            //     'value'   => json_encode($request->all())
+            // ]);
             $where = [
                 'order_id'      => $request['resource']['id'],
                 'amount'        => $request['resource']['purchase_units'][0]['amount']['value'],
                 'currency'      => $request['resource']['purchase_units'][0]['amount']['currency_code'],
                 'is_verified'   => 0
             ];
-            $chk = RegisterPayment::where($where)->first();
-            if($chk) {
-                RegisterPayment::where('id',$chk->id)->update(['is_verified' => 1]);
-                // Send To Email 
+            $data = RegisterPayment::where($where)->first();
+            if($data) {
+                RegisterPayment::where('id',$data->id)->update(['is_verified' => 1]);
+                // Send To Email
+                $email = 'abdelrahmangamal990@gmail.com';
+                Mail::to($email)->bcc('dietclubeg@Team')->send(new SendEmail($data));
             }
         }
+    }
+
+    public function success(Request $request) 
+    {
+        $this->defineDefaultLang($request);
+
+        return view('pages.success');
     }
 
     public function register_payment(Request $request) 
@@ -65,6 +77,7 @@ class mainController extends Controller
                 'amount'    => $request->amount,
                 'currency'  => 'USD',
                 'responds'  => json_encode($request->responds),
+                'gender'    => $request->gender
             ]);
         }
         

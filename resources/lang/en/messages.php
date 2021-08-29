@@ -18,6 +18,10 @@ return [
             'header-desc-c' => 'Pay with your favourite payment',
             'header-desc-m' => 'Choose your gender now',
         ],
+        'success'  => [
+            'header-title'  => 'SUCCESS PAYMENT PROCCESS',
+            'header-desc'   => 'Payment proccess Is approved successfully',
+        ]
     ],
     'lang'  => [
         'en'    => 'الانجليزية',

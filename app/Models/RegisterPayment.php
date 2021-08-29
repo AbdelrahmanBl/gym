@@ -11,5 +11,10 @@ class RegisterPayment extends Model
         'amount',
         'currency',
         'responds',
+        'gender'
     ];
+
+    public function getGetRespondsAttribute() {
+        return collect(json_decode($this->responds))->toArray();
+    }
 }

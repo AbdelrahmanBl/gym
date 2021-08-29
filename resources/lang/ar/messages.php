@@ -18,6 +18,10 @@ return [
             'header-desc-c' => 'استخدم طريقة الدفع المفضلة لك',
             'header-desc-m' => 'من فضلك اختر الجنس',
         ],
+        'success'  => [
+            'header-title'  => 'عملية دفع ناجحة',
+            'header-desc'   => 'لقد تمت عملية الدفع بنجاح',
+        ]
     ],
     'lang'  => [
         'en'    => 'ENGLISH',

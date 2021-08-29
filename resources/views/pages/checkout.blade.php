@@ -31,6 +31,7 @@
 
         <input type="hidden" value="{{$questions}}" id="questions">
         <input type="hidden" value="{{asset("public/assets/img/questions/{$questionIde}")}}" id="questions-path">
+        <input type="hidden" id="gt_gender" value="{{request()->get('gender')}}">
         @foreach(__("{$questionIde}") as $question)
         <div id="div-{{$loop->iteration}}" style="@if($loop->iteration > 1) display: none; @endif">
             @include("questions.{$question['type']}",['question' => $question , 'pos' => $loop->iteration])

@@ -106,6 +106,8 @@ function addRespond(_this,pos,type='default',required=false) {
             displayError()
             return 0
         }
+
+        if(respond.length == 0) respond = null
     }
     else if(type == 'chooseOne') {
         respond = null
@@ -145,7 +147,7 @@ function addRespond(_this,pos,type='default',required=false) {
         selectRespond($(_this).attr('id'))
     }
 
-    if(responds[pos-1])
+    if(responds[pos-1]) 
         responds[pos-1] = respond
     else responds.push(respond)
 
