@@ -40,6 +40,8 @@ class mainController extends Controller
 
     public function activate_checkout(Request $request) 
     {
+        $this->defineDefaultLang($request);
+        
         if($request['event_type'] == "CHECKOUT.ORDER.COMPLETED") {
             // Setting::create([
             //     'key'     => date('H:i:s'),
