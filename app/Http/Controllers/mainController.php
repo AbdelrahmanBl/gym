@@ -39,10 +39,7 @@ class mainController extends Controller
     }
 
     public function activate_checkout(Request $request) 
-    {
-        // $this->defineDefaultLang($request);
-        App::setLocale('ar');
-        
+    {   
         if($request['event_type'] == "CHECKOUT.ORDER.COMPLETED") {
             // Setting::create([
             //     'key'     => date('H:i:s'),
@@ -58,6 +55,7 @@ class mainController extends Controller
             if($data) {
                 RegisterPayment::where('id',$data->id)->update(['is_verified' => 1]);
                 // Send To Email
+                App::setLocale($data->lang);
                 $email = 'abdelrahmangamal990@gmail.com';
                 Mail::to($email)->bcc('dietclubeg@Team')->send(new SendEmail($data));
             }
@@ -80,7 +78,8 @@ class mainController extends Controller
                 'amount'    => $request->amount,
                 'currency'  => 'USD',
                 'responds'  => json_encode($request->responds),
-                'gender'    => $request->gender
+                'gender'    => $request->gender,
+                'lang'      => $request->session()->get('lang', 'en')
             ]);
         }
         

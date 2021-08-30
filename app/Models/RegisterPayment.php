@@ -11,7 +11,8 @@ class RegisterPayment extends Model
         'amount',
         'currency',
         'responds',
-        'gender'
+        'gender',
+        'lang'
     ];
 
     public function getGetRespondsAttribute() {
