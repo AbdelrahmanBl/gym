@@ -40,7 +40,8 @@ class mainController extends Controller
 
     public function activate_checkout(Request $request) 
     {
-        $this->defineDefaultLang($request);
+        // $this->defineDefaultLang($request);
+        App::setLocale('ar');
         
         if($request['event_type'] == "CHECKOUT.ORDER.COMPLETED") {
             // Setting::create([
